@@ -1,0 +1,1 @@
+{"hosting":{"ignore":["firebase.json","**/.*","**/node_modules/**","codex-task.md","codex-run.log","SUBMISSION.md","screenshots/**","verify/**"],"public":".","rewrites":[{"destination":"/index.html","source":"**"}]}}

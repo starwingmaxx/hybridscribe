@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101216">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>HybridScribe — Hybrid AI Notes</title>
+    <!-- Firebase JS SDK (v13.4.0) via ES module import map: no build step.
+         The SDK modules are only fetched when a real Firebase config is
+         present; Demo Mode runs fully offline. -->
+    <script type="importmap">
+      {
+        "imports": {
+          "firebase/app": "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js",
+          "firebase/ai": "https://www.gstatic.com/firebasejs/13.4.0/firebase-ai.js",
+          "firebase/app-check": "https://www.gstatic.com/firebasejs/13.4.0/firebase-app-check.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

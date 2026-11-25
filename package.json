@@ -1,0 +1,1 @@
+{"description":"HybridScribe — hybrid AI notes powered by Firebase AI Logic (on-device Gemini Nano + cloud Gemini). Zero-build static web app.","name":"hybridscribe","private":true,"scripts":{"start":"python3 -m http.server 8080"},"type":"module","version":"1.0.0"}
