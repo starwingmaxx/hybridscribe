@@ -2,3 +2,6 @@ node_modules/
 dist/
 .firebase/
 *.log
+
+# symlink to shared puppeteer install (local only)
+verify/node_modules
