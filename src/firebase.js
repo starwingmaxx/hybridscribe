@@ -14,9 +14,17 @@ export function getAIInstance() {
 
       const app = getApps().find(({ name }) => name === "[DEFAULT]") ?? initializeApp(firebaseConfig);
       if (appCheckSiteKey.trim()) {
-        const { initializeAppCheck, ReCaptchaV3Provider } = await import("firebase/app-check");
+        // Optional: a console-registered App Check debug token, set per browser
+        // via localStorage, lets automated/local browsers pass App Check where
+        // reCAPTCHA cannot run. Nothing is shipped in code; without a token
+        // registered in the Firebase console the value is useless.
+        try {
+          const debugToken = globalThis.localStorage?.getItem("APPCHECK_DEBUG_TOKEN");
+          if (debugToken) globalThis.FIREBASE_APPCHECK_DEBUG_TOKEN = debugToken;
+        } catch { /* storage unavailable — continue with reCAPTCHA */ }
+        const { initializeAppCheck, ReCaptchaEnterpriseProvider } = await import("firebase/app-check");
         initializeAppCheck(app, {
-          provider: new ReCaptchaV3Provider(appCheckSiteKey.trim()),
+          provider: new ReCaptchaEnterpriseProvider(appCheckSiteKey.trim()),
           isTokenAutoRefreshEnabled: true,
         });
       } else {
